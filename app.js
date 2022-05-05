@@ -38,6 +38,7 @@ const drawLine = async() => {
         i%2 === 0 ? dialog.classList.add('dialog-left') : dialog.classList.add('dialog-right')
         dialog.innerText = e.text
         point.classList.add('point-time')
+        dialog.classList.add('dialog')
 
         //Añadimos el estilo de point al li antes de enlazarlo como hijo de de la line
         point.appendChild(dialog)
@@ -47,6 +48,22 @@ const drawLine = async() => {
 
 drawLine();
 
-if(window.onresize){
-    console.log(window.innerWidth)
-}
+//Añadimos a la ventana un 'escuchador' para el evento scroll
+window.addEventListener('scroll', () => {
+
+    //Recogemos todos los dialogs y los convertimos a un Array para poder manipularlos
+    const dialogs = Array.prototype.slice.call(document.querySelectorAll('.dialog'))
+    //Recogemos la altura total de la ventana para usarla de referencia
+    const screenSize = window.innerHeight;
+    
+    //Iteramos: getBoundingClientRect().top sacara la altura a la que se encuentra la pantalla y screenSize recogera su altura total
+    dialogs.map((e, i) => {
+        if(e.getBoundingClientRect().top < screenSize){
+            e.classList.add('visible')
+            e.classList.remove('no-visible')
+        }else{
+            e.classList.add('no-visible')
+            e.classList.remove('visible')
+        }
+    })
+})

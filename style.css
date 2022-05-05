@@ -60,6 +60,7 @@ body{
     width: 300px;
     background-color: rgb(199, 193, 193);
     top: -100px;
+    transition: all 1s;
 }
 
 .dialog-left{
@@ -68,6 +69,14 @@ body{
 
 .dialog-right{
     right: 350px;
+}
+
+.visible{
+    opacity: 1;
+}
+
+.no-visible{
+    opacity: 0;
 }
 
 
