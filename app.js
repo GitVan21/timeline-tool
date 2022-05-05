@@ -37,10 +37,10 @@ const drawLine = async() => {
         //Si es par le daremos una clase y si es impar otra
         i%2 === 0 ? dialog.classList.add('dialog-left') : dialog.classList.add('dialog-right')
         dialog.innerText = e.text
+        point.classList.add('point-time')
 
         //Añadimos el estilo de point al li antes de enlazarlo como hijo de de la line
         point.appendChild(dialog)
-        point.classList.add('point-time')
         line.appendChild(point)
     })
 }
