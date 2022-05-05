@@ -69,3 +69,31 @@ body{
 .dialog-right{
     right: 350px;
 }
+
+
+@media (max-width: 755px) {
+    #line-time{
+        left: 10%;
+    }
+
+    .dialog-right{
+        right: 0px;
+        left: 50px;
+    }
+
+    .point-time div{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 415px) {
+    #line-time{
+        left: 5%;
+    }
+
+    .point-time div{
+        left: 20px;
+        width: 250px;
+        font-size: 12px;
+    }
+}
