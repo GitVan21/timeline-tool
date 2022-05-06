@@ -1,4 +1,5 @@
-/*fonts*/
+/*NORMALIZES*/ /*fonts*/
+
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 
 @font-face {
@@ -6,22 +7,14 @@
   src: url("./fonts/Triforce.ttf") format("truetype");
 }
 
-/*general styles*/
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition-duration: 0.2s;
 }
 
-ul {
-  list-style: none;
-}
-
-body {
-  background-color: rgb(18, 18, 18);
-  color: rgb(255, 255, 255);
-}
+/*GENERALS*/
 
 header {
   margin-left: auto;
@@ -36,13 +29,18 @@ main {
   margin-right: auto;
 }
 
-/*HEADER STYLE*/
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(18, 18, 18);
+    color: rgb(255, 255, 255);
+}
 
 /*header title background */
 
 section.intro {
-  height: 100vh;
-  min-width: 100vw;
+  height: 80vh;
+  min-width: 100%;
   background-image: url("./imgs/sword-and-shield-castle-artwork-the-legend-of-zelda-landscape-link.jpg");
   background-size: cover;
   background-position: center;
@@ -62,13 +60,53 @@ div.container {
 /*header zelda logo*/
 
 div figure.logo {
-  margin-top: 10rem;
+  margin-top: 20%;
   position: sticky;
   top: 200px;
 }
 
-/*header game timeline subtitle/background */
+/*LINEA TEMPORAL*/
+#body-timeline{
+    width: 80%;
+    padding-top: 10px;
+    margin: auto;
+}
 
+#line-time{
+    position: absolute;
+    left: 50%;
+    list-style: none;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 50px 0;
+    width: 5px;
+    min-height: 60%;
+    max-height: max-content;
+    border-radius: 20px;
+    background-color: green;
+}
+
+.point-time{
+    position: relative;
+    width: 10px;
+    padding-top: 50px;
+}
+
+.point-time::after{
+    content: "";
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    margin-left: -7px;
+    background-color: greenyellow;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+/*TEXTS*/
 h1 {
   width: 100%;
   font-family: "triforce";
@@ -83,37 +121,6 @@ h1 {
   padding: 0.5rem;
 }
 
-/* CARD STYLE */
-
-.body-card {
-  max-width: 100vw;
-  margin-bottom: 4rem;
-  background-color: rgb(30, 30, 30);
-  padding: 1rem auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/*card left*/
-
-li:nth-child(odd) div.body-card {
-  display: flex;
-  flex-direction: row;
-  border-radius: 60px 8px 15px 20px;
-  box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
-}
-
-/*card right*/
-
-li:nth-child(even) div.body-card {
-  display: flex;
-  flex-direction: row-reverse;
-  border-radius: 8px 60px 20px 15px;
-  box-shadow: -1px 1px 1px 1px rgba(105, 155, 255, 0.282);
-}
-
-/*CARD CONTENT*/
-
 .text-card {
   display: flex;
   flex-direction: column;
@@ -121,9 +128,65 @@ li:nth-child(even) div.body-card {
   align-content: center;
 }
 
-/*card cover left*/
+.dialog p{
+  text-align: center;
+  font-weight: 400;
+  font-family: "DotGothic16";
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  overflow: auto;
+  padding: 1rem;
+  line-height: 25px;
+  overflow: hidden;
+}
 
-li:nth-child(odd) .body-card img {
+.dialog-left p{
+  text-shadow: 1px 1px 2px rgb(235, 35, 35);
+}
+
+.dialog-right p{
+  text-shadow: 1px 1px 2px rgb(105, 155, 255);
+}
+
+/*DIALOGS*/
+.body-card {
+  width: 500px;
+  margin-bottom: 4rem;
+  background-color: rgb(30, 30, 30);
+  padding: 1rem auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.point-time .dialog{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+    width: 300px;
+    top: -100px;
+    transition: all 1s;
+}
+
+.dialog-left{
+    left: 50px;
+    border-radius: 60px 8px 15px 20px;
+    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
+}
+
+.dialog-right{
+    right: 350px;
+    border-radius: 30px 80px 50px 80px;
+    padding: 1.5rem;
+    box-shadow: -1px 1px 1px 1px rgba(105, 155, 255, 0.282);
+}
+
+.frame{
+  margin: auto;
+}
+
+.dialog-left img{
   width: 200px;
   height: 200px;
   border-radius: 80px 30px 80px 50px;
@@ -131,9 +194,7 @@ li:nth-child(odd) .body-card img {
   filter: drop-shadow(2px 2px 15px rgb(235, 35, 35));
 }
 
-/*card cover right*/
-
-li:nth-child(even) .body-card img {
+.dialog-right img{
   width: 200px;
   height: 200px;
   border-radius: 30px 80px 50px 80px;
@@ -141,62 +202,60 @@ li:nth-child(even) .body-card img {
   filter: drop-shadow(2px 2px 15px rgb(105, 155, 255));
 }
 
-/*card left title*/
-
-li:nth-child(odd) .text-card h2 {
+.dialog h2{
   text-align: center;
   font-family: "triforce";
+  padding: 0.8rem;
+  text-shadow: 3px 5px 20px rgb(255, 255, 255);
+  display: inline-block;
+}
+
+.dialog-left h2{
   color: rgb(247, 68, 68);
-  padding: 0.8rem;
-  text-shadow: 3px 5px 20px rgb(255, 255, 255);
-  display: inline-block;
 }
 
-/*card right title*/
-
-li:nth-child(even) .text-card h2 {
-  text-align: center;
-  font-family: "triforce";
+.dialog-right h2{
   color: rgb(105, 155, 255);
-  padding: 0.8rem;
-  text-shadow: 3px 5px 20px rgb(255, 255, 255);
-  display: inline-block;
 }
 
-/*card date*/
-
-li .text-card h3 {
+.dialog h3{
   font-family: "triforce";
   color: rgb(233, 233, 233);
   display: inline-block;
 }
 
-/*card text*/
-
-li:nth-child(odd) .text-card p {
-  text-align: center;
-  font-weight: 400;
-  font-family: "DotGothic16";
-  color: rgb(255, 255, 255);
-  display: inline-block;
-  overflow: auto;
-  padding: 1rem;
-  line-height: 25px;
-  text-shadow: 1px 1px 2px rgb(235, 35, 35);
-  overflow: hidden;
+.visible{
+    opacity: 1;
 }
 
-li:nth-child(even) .text-card p {
-  text-align: center;
-  font-weight: 400;
-  font-family: "DotGothic16";
-  color: rgb(255, 255, 255);
-  display: inline-block;
-  overflow: auto;
-  padding: 1rem;
-  line-height: 25px;
-  text-shadow: 1px 1px 2px rgb(105, 155, 255);
-  overflow: hidden;
+.no-visible{
+    opacity: 0;
 }
 
-/*MEDIAQUERYS*/
+
+@media (max-width: 755px) {
+    #line-time{
+        left: 10%;
+    }
+
+    .dialog-right{
+        right: 0px;
+        left: 50px;
+    }
+
+    .point-time div{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 415px) {
+    #line-time{
+        left: 5%;
+    }
+
+    .point-time div{
+        left: 20px;
+        width: 250px;
+        font-size: 12px;
+    }
+}
