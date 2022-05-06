@@ -30,7 +30,7 @@ const drawLine = async() => {
     
     //Iteramos la cadena resultante siendo E cada elemento e I su indice
     response.map((e, i) => {
-        //Creamos los elementos
+/*      //Creamos los elementos
         const point = document.createElement('li')
         const dialog = document.createElement('div')
 
@@ -42,8 +42,32 @@ const drawLine = async() => {
 
         //Añadimos el estilo de point al li antes de enlazarlo como hijo de de la line
         point.appendChild(dialog)
-        line.appendChild(point)
+        line.appendChild(point) */
+        createLiAndCard(e,i)
     })
+}
+
+const createLiAndCard = (element,index) => {
+  const li = document.createElement("li");
+  li.classList.add('point-time')
+
+    li.innerHTML = `
+    <div class="body-card dialog ${index%2 === 0 ? 'dialog-left' : 'dialog-right'}">
+      <figure class="frame">
+        <img
+          src=${element.image}
+          alt="The Legend Of Zelda Game Cover"
+        />
+      </figure>
+      <div class="text-card">
+        <h2>${element.title}</h2>
+        <h3>${element.date}</h3>
+        <p>${element.text}</p>
+      </div>
+    </div>
+    `;
+
+    line.append(li);
 }
 
 drawLine();

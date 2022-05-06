@@ -1,4 +1,12 @@
-/*NORMALIZES*/
+/*NORMALIZES*/ /*fonts*/
+
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+
+@font-face {
+  font-family: "triforce";
+  src: url("./fonts/Triforce.ttf") format("truetype");
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -6,10 +14,55 @@
     transition-duration: 0.2s;
 }
 
+/*GENERALS*/
+
+header {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 100vw;
+  height: 100%;
+}
+
+main {
+  padding: 0 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body{
     width: 100%;
     height: 100%;
-    background-color: rgb(58, 58, 56);
+    background-color: rgb(18, 18, 18);
+    color: rgb(255, 255, 255);
+}
+
+/*header title background */
+
+section.intro {
+  height: 80vh;
+  min-width: 100%;
+  background-image: url("./imgs/sword-and-shield-castle-artwork-the-legend-of-zelda-landscape-link.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*header container */
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+/*header zelda logo*/
+
+div figure.logo {
+  margin-top: 20%;
+  position: sticky;
+  top: 200px;
 }
 
 /*LINEA TEMPORAL*/
@@ -53,22 +106,122 @@ body{
     border-radius: 100%;
 }
 
+/*TEXTS*/
+h1 {
+  width: 100%;
+  font-family: "triforce";
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding: 0.5rem;
+}
+
+.text-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.dialog p{
+  text-align: center;
+  font-weight: 400;
+  font-family: "DotGothic16";
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  overflow: auto;
+  padding: 1rem;
+  line-height: 25px;
+  overflow: hidden;
+}
+
+.dialog-left p{
+  text-shadow: 1px 1px 2px rgb(235, 35, 35);
+}
+
+.dialog-right p{
+  text-shadow: 1px 1px 2px rgb(105, 155, 255);
+}
+
 /*DIALOGS*/
-.point-time div{
+.body-card {
+  width: 500px;
+  margin-bottom: 4rem;
+  background-color: rgb(30, 30, 30);
+  padding: 1rem auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.point-time .dialog{
     position: relative;
+    display: flex;
+    flex-direction: column;
     padding: 5px 20px;
     width: 300px;
-    background-color: rgb(199, 193, 193);
     top: -100px;
     transition: all 1s;
 }
 
 .dialog-left{
     left: 50px;
+    border-radius: 60px 8px 15px 20px;
+    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
 }
 
 .dialog-right{
     right: 350px;
+    border-radius: 30px 80px 50px 80px;
+    padding: 1.5rem;
+    box-shadow: -1px 1px 1px 1px rgba(105, 155, 255, 0.282);
+}
+
+.frame{
+  margin: auto;
+}
+
+.dialog-left img{
+  width: 200px;
+  height: 200px;
+  border-radius: 80px 30px 80px 50px;
+  padding: 1.5rem;
+  filter: drop-shadow(2px 2px 15px rgb(235, 35, 35));
+}
+
+.dialog-right img{
+  width: 200px;
+  height: 200px;
+  border-radius: 30px 80px 50px 80px;
+  padding: 1.5rem;
+  filter: drop-shadow(2px 2px 15px rgb(105, 155, 255));
+}
+
+.dialog h2{
+  text-align: center;
+  font-family: "triforce";
+  padding: 0.8rem;
+  text-shadow: 3px 5px 20px rgb(255, 255, 255);
+  display: inline-block;
+}
+
+.dialog-left h2{
+  color: rgb(247, 68, 68);
+}
+
+.dialog-right h2{
+  color: rgb(105, 155, 255);
+}
+
+.dialog h3{
+  font-family: "triforce";
+  color: rgb(233, 233, 233);
+  display: inline-block;
 }
 
 .visible{
