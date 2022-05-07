@@ -10,6 +10,66 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <section class="form-modal-close" id="form-modal">
+      <button class="close-button" id="close-button">X</button>
+      <form action="get">
+        <fieldset>
+          <legend>The Legend of Zelda Form</legend>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              placeholder="'Please, introduce game's title...'"
+              autofocus
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="date">Launch date</label>
+            <input
+              id="date"
+              name="date"
+              type="number"
+              min="1986"
+              max="2050"
+              placeholder="'Please, introduce the year of game launch...'"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="5"
+              placeholder="'Please, type anything related to the game's history, achievements...'"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="cover">Title cover</label>
+
+            <img
+              class="preview-cover"
+              src="https://mega.tv/wp-content/uploads/sites/4/2014/07/batman-1.jpg"
+              alt="user cover"
+            />
+
+            <input
+              id="cover"
+              name="cover"
+              type="text"
+              placeholder="'Please, give the URL in which the game's cover is stored...'"
+            />
+          </div>
+
+          <button id="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
     <header>
       <section class="intro">
         <div class="container">
@@ -23,14 +83,17 @@
         </div>
       </section>
       <section>
-        <h1>gamE Timeline</h1>
+        <h1>Game Timeline</h1>
       </section>
     </header>
     <main>
       <section id="body-timeline">
         <ul id="line-time"></ul>
+
+        <button class="open-button" id="open-button">+</button>
       </section>
     </main>
+
     <script src="./app.js"></script>
   </body>
 </html>
