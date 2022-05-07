@@ -489,14 +489,18 @@ textarea {
   }
 
   #line-time > li:nth-child(odd) > div {
-    width: 80vw;
+    width: 290px;
+    height: 310px;
+
     display: flex;
     align-content: center;
     align-items: center;
   }
 
   #line-time > li:nth-child(even) > div {
-    width: 80vw;
+    width: 290px;
+    height: 310px;
+
     display: flex;
     align-content: center;
     align-items: center;
@@ -507,16 +511,18 @@ textarea {
   /*card resize*/
 
   #line-time > li:nth-child(odd) > div {
-    width: 70vw;
-    height: 50vh;
+    width: 170px;
+    height: 260px;
+
     display: flex;
     align-content: center;
     align-items: center;
   }
 
   #line-time > li:nth-child(even) > div {
-    width: 70vw;
-    height: 50vh;
+    width: 170px;
+    height: 260px;
+
     display: flex;
     align-content: center;
     align-items: center;
