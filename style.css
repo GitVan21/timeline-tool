@@ -525,14 +525,6 @@ textarea {
   }
 }
 
-@media (width: 375px) {
-  /*iphone SE bg position*/
-
-  section.intro {
-    background-position: bottom right -180px;
-  }
-}
-
 @media (max-width: 280px) {
   /* background position */
 
@@ -574,5 +566,31 @@ textarea {
 
   .point-time::after {
     top: 124px;
+  }
+}
+
+/*DEVICE SPECIFIC DIMMENSIONS*/
+
+@media only screen and (width: 740px) and (height: 360px) {
+  /*fix for galaxy s8 wide screen*/
+
+  section.intro {
+    background-position: bottom right;
+  }
+}
+
+@media (width: 375px) {
+  /*fix for iphone SE regular screen*/
+
+  section.intro {
+    background-position: bottom right -180px;
+  }
+}
+
+@media only screen and (width: 667px) and (height: 375px) {
+  /*fix for iphone SE wide screen*/
+
+  section.intro {
+    background-position: bottom right;
   }
 }
