@@ -386,7 +386,13 @@ textarea {
 
 /* mediaq */
 
-@media (min-width: 756px) {
+@media (max-width: 820px) {
+  /*background position */
+
+  section.intro {
+    background-position: bottom right -280px;
+  }
+
   .open-button {
     margin-left: 52.5%;
     position: relative;
@@ -394,6 +400,12 @@ textarea {
 }
 
 @media (max-width: 755px) {
+  /* background position */
+
+  section.intro {
+    background-position: bottom right -180px;
+  }
+
   /*timeline resize*/
 
   #line-time {
@@ -450,6 +462,12 @@ textarea {
 }
 
 @media (max-width: 415px) {
+  /*background position*/
+
+  section.intro {
+    background-position: bottom right -260px;
+  }
+
   /*timeline resize*/
 
   #line-time {
@@ -507,7 +525,21 @@ textarea {
   }
 }
 
+@media (width: 375px) {
+  /*iphone SE bg position*/
+
+  section.intro {
+    background-position: bottom right -180px;
+  }
+}
+
 @media (max-width: 280px) {
+  /* background position */
+
+  section.intro {
+    background-position: bottom right -180px;
+  }
+
   /*card resize*/
 
   #line-time > li:nth-child(odd) > div {
