@@ -4,6 +4,10 @@ const url =
   "https://gist.githubusercontent.com/bertez/8e62741154903c35edb3bfb825a7f052/raw/b5cd5137fd168116cc71740f1fbb75819d0fa82e/zelda-timeline.json";
 const line = document.querySelector("#line-time");
 
+const closeButton = document.querySelector("#close-button");
+
+const openButton = document.querySelector("#open-button");
+
 /**
  * Esta funcion servira como llamada a la api y retorna una promesa resuelta o rechazada
  * que se tratara con un async/await
@@ -56,6 +60,10 @@ const drawLine = async () => {
   });
 };
 
+const addInfo = () => {
+  let info = JSON.parse(localStorage.getItem("info"));
+};
+
 const createLiAndCard = (element, index) => {
   const li = document.createElement("li");
   li.classList.add("point-time");
@@ -102,4 +110,15 @@ window.addEventListener("scroll", () => {
       e.classList.remove("visible");
     }
   });
+});
+
+closeButton.addEventListener("click", () => {
+  const modal = document.querySelector("#form-modal");
+  modal.classList.add("form-modal-close");
+});
+
+openButton.addEventListener("click", () => {
+  const modal = document.querySelector("#form-modal");
+  modal.classList.remove("form-modal-close");
+  modal.classList.add("form-modal");
 });

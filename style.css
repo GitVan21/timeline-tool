@@ -7,11 +7,11 @@
   src: url("./fonts/Triforce.ttf") format("truetype");
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    transition-duration: 0.2s;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  transition-duration: 0.2s;
 }
 
 /*GENERALS*/
@@ -19,7 +19,7 @@
 header {
   margin-left: auto;
   margin-right: auto;
-  min-width: 100vw;
+  width: 100%;
   height: 100%;
 }
 
@@ -29,11 +29,11 @@ main {
   margin-right: auto;
 }
 
-body{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(18, 18, 18);
-    color: rgb(255, 255, 255);
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(18, 18, 18);
+  color: rgb(255, 255, 255);
 }
 
 /*header title background */
@@ -46,6 +46,7 @@ section.intro {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 /*header container */
@@ -66,58 +67,63 @@ div figure.logo {
 }
 
 /*LINEA TEMPORAL*/
-#body-timeline{
-    width: 80%;
-    padding-top: 10px;
-    margin: auto;
+#body-timeline {
+  width: 80%;
+  padding-top: 10px;
+  margin: auto;
 }
 
-#line-time{
-    position: absolute;
-    left: 50%;
-    list-style: none;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    padding: 50px 0;
-    width: 5px;
-    min-height: 60%;
-    max-height: max-content;
-    border-radius: 20px;
-    background-color: green;
+#line-time {
+  position: absolute;
+  left: 50%;
+  list-style: none;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 50px 0;
+  width: 5px;
+  min-height: 60%;
+  max-height: max-content;
+  border-radius: 20px;
+  background-color: rgb(18, 18, 18);
+  box-shadow: 0px 0px 40px white;
 }
 
-.point-time{
-    position: relative;
-    width: 10px;
-    padding-top: 50px;
+.point-time {
+  position: relative;
+  width: 10px;
+  padding-top: 50px;
 }
 
-.point-time::after{
-    content: "";
-    position: absolute;
-    right: 0px;
-    left: 0px;
-    top: 0px;
-    margin-left: -7px;
-    background-color: greenyellow;
-    padding: 10px;
-    border-radius: 100%;
+.point-time::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  left: -5px;
+  top: 180px;
+  margin-left: -7px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border: 5px solid rgb(18, 18, 18);
+  border-radius: 100%;
 }
 
 /*TEXTS*/
 h1 {
   width: 100%;
-  font-family: "triforce";
-  background-color: rgb(255, 255, 255);
+  font-family: "triforce", serif;
+  font-size: 40px;
+  background-color: transparent;
   background-size: cover;
   color: rgb(0, 0, 0);
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 19rem;
   padding: 0.5rem;
 }
 
@@ -128,27 +134,26 @@ h1 {
   align-content: center;
 }
 
-.dialog p{
+.dialog p {
   text-align: center;
   font-weight: 400;
-  font-family: "DotGothic16";
+  font-family: "DotGothic16", sans-serif;
   color: rgb(255, 255, 255);
   display: inline-block;
-  overflow: auto;
   padding: 1rem;
   line-height: 25px;
-  overflow: hidden;
 }
 
-.dialog-left p{
+.dialog-left p {
   text-shadow: 1px 1px 2px rgb(235, 35, 35);
 }
 
-.dialog-right p{
+.dialog-right p {
   text-shadow: 1px 1px 2px rgb(105, 155, 255);
 }
 
 /*DIALOGS*/
+
 .body-card {
   width: 500px;
   margin-bottom: 4rem;
@@ -158,104 +163,434 @@ h1 {
   margin-right: auto;
 }
 
+/* card size */
 
-.point-time .dialog{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 5px 20px;
-    width: 300px;
-    top: -100px;
-    transition: all 1s;
+.point-time .dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+  width: 300px;
+  height: 320px;
+  top: -100px;
+  transition: all 3s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  direction: rtl;
 }
 
-.dialog-left{
-    left: 50px;
-    border-radius: 60px 8px 15px 20px;
-    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
+/*NOTE: GOTTA FIX 1986 CARD HEIGHT ONCE THE ORDER IS DONE
+
+/*scrollbars*/
+
+#line-time > li:nth-child(odd) > div {
+  direction: ltr;
 }
 
-.dialog-right{
-    right: 350px;
-    border-radius: 30px 80px 50px 80px;
-    padding: 1.5rem;
-    box-shadow: -1px 1px 1px 1px rgba(105, 155, 255, 0.282);
+#line-time > li:nth-child(even) > div {
+  direction: rtl;
 }
 
-.frame{
+.point-time .dialog-left::-webkit-scrollbar {
+  width: 1px;
+}
+
+.point-time .dialog-left::-webkit-scrollbar-thumb {
+  background-color: rgb(204, 46, 46);
+  border-radius: 0px 2px 2px 0px;
+}
+
+.point-time .dialog-right::-webkit-scrollbar {
+  width: 1px;
+}
+
+.point-time .dialog-right::-webkit-scrollbar-thumb {
+  background-color: rgba(105, 155, 255, 0.637);
+  border-radius: 0px 2px 2px 0px;
+}
+
+/*card style by position*/
+
+.dialog-left {
+  left: 50px;
+  border-radius: 60px 2px 2px 20px;
+  box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
+}
+
+.dialog-right {
+  right: 350px;
+  border-radius: 0px 80px 50px 0px;
+  padding: 1.5rem;
+  box-shadow: -1px 1px 1px 1px rgba(105, 155, 255, 0.158);
+}
+
+.frame {
   margin: auto;
 }
 
-.dialog-left img{
+.dialog-left img {
   width: 200px;
-  height: 200px;
+  height: 210px;
   border-radius: 80px 30px 80px 50px;
   padding: 1.5rem;
   filter: drop-shadow(2px 2px 15px rgb(235, 35, 35));
 }
 
-.dialog-right img{
+.dialog-right img {
   width: 200px;
-  height: 200px;
+  height: 210px;
   border-radius: 30px 80px 50px 80px;
   padding: 1.5rem;
   filter: drop-shadow(2px 2px 15px rgb(105, 155, 255));
 }
 
-.dialog h2{
+.dialog h2 {
   text-align: center;
-  font-family: "triforce";
+  font-family: "triforce", serif;
   padding: 0.8rem;
   text-shadow: 3px 5px 20px rgb(255, 255, 255);
   display: inline-block;
 }
 
-.dialog-left h2{
+.dialog-left h2 {
   color: rgb(247, 68, 68);
 }
 
-.dialog-right h2{
+.dialog-right h2 {
   color: rgb(105, 155, 255);
 }
 
-.dialog h3{
-  font-family: "triforce";
+.dialog h3 {
+  font-family: "triforce", serif;
   color: rgb(233, 233, 233);
   display: inline-block;
 }
 
-.visible{
-    opacity: 1;
+.visible {
+  opacity: 1;
 }
 
-.no-visible{
-    opacity: 0;
+.no-visible {
+  opacity: 0;
 }
 
+/* FORM MODAL */
+
+.form-modal {
+  width: 90%;
+  background-image: url("https://fondosmil.com/fondo/4529.jpg");
+  background-size: cover;
+  position: fixed;
+  z-index: 10;
+  top: 1.5%;
+  left: 5%;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.form-modal-close {
+  display: none;
+}
+
+.open-button {
+  width: 20px;
+  height: 25px;
+  border: 2px solid rgba(142, 247, 132, 0.541);
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: bolder;
+  color: rgb(177, 175, 175);
+  outline: none;
+  background-color: transparent;
+}
+
+.close-button {
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: bolder;
+  color: red;
+  outline: none;
+  background-color: transparent;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: none;
+}
+
+legend {
+  font-family: "triforce", serif;
+  margin: 10px;
+  font-size: 40px;
+  color: red;
+  text-shadow: 1px 2px 6px white;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(0, 0, 0, 0.432);
+  padding: 5px;
+  padding-bottom: 10px;
+  width: 80%;
+}
+
+label {
+  color: rgb(235, 229, 229);
+  text-shadow: 2px 2px 4px rgb(204, 46, 46);
+  font-weight: bold;
+  font-family: "DotGothic16", sans-serif;
+}
+
+/* INPUTS */
+
+input,
+textarea {
+  font-size: 15px;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  width: 70%;
+}
+
+.preview-cover {
+  width: 20%;
+  margin: 5px;
+}
+
+/* button */
+#submit {
+  border: none;
+  outline: none;
+  width: 55%;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+textarea {
+  padding-top: 5px;
+}
+
+/* mediaq */
+
+@media (max-width: 820px) {
+  /*background position */
+
+  section.intro {
+    background-position: bottom right -280px;
+  }
+
+  .open-button {
+    margin-left: 52.5%;
+    position: relative;
+  }
+}
 
 @media (max-width: 755px) {
-    #line-time{
-        left: 10%;
-    }
+  /* background position */
 
-    .dialog-right{
-        right: 0px;
-        left: 50px;
-    }
+  section.intro {
+    background-position: bottom right -180px;
+  }
 
-    .point-time div{
-        font-size: 15px;
-    }
+  /*timeline resize*/
+
+  #line-time {
+    left: 10%;
+    width: 4px;
+    background-color: rgb(18, 18, 18);
+    box-shadow: 0px 0px 15px white;
+  }
+
+  .point-time::after {
+    right: 0px;
+    left: -2px;
+    top: 184px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 7px;
+    border: 4px solid rgb(18, 18, 18);
+  }
+
+  .point-time {
+    width: 1px;
+  }
+
+  /*So we always use same card format and display for mw 755px*/
+
+  .dialog-left {
+    border-radius: 0px 80px 50px 0px;
+    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    direction: rtl;
+  }
+
+  .dialog-right {
+    right: 0px;
+    left: 50px;
+  }
+
+  .point-time div {
+    font-size: 15px;
+  }
+
+  .open-button {
+    margin-left: 3%;
+    position: relative;
+  }
+}
+
+@media (max-width: 441px) {
+  .open-button {
+    margin-left: 3%;
+    position: relative;
+  }
 }
 
 @media (max-width: 415px) {
-    #line-time{
-        left: 5%;
-    }
+  /*background position*/
 
-    .point-time div{
-        left: 20px;
-        width: 250px;
-        font-size: 12px;
-    }
+  section.intro {
+    background-position: bottom right -260px;
+  }
+
+  /*timeline resize*/
+
+  #line-time {
+    left: 10%;
+    width: 2px;
+    background-color: rgb(18, 18, 18);
+    box-shadow: 0px 0px 10px white;
+  }
+
+  .point-time::after {
+    position: absolute;
+    right: 0px;
+    left: 1px;
+    top: 184px;
+    margin-left: -7px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border: 2px solid rgb(18, 18, 18);
+    border-radius: 100%;
+  }
+
+  .point-time {
+    width: 1px;
+  }
+
+  .point-time div {
+    left: 20px;
+    width: 250px;
+    font-size: 12px;
+  }
+
+  .open-button {
+    width: 20px;
+    height: 25px;
+    margin-left: -5%;
+    position: relative;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 290px;
+    height: 310px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 290px;
+    height: 310px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 280px) {
+  /* background position */
+
+  section.intro {
+    background-position: bottom right -180px;
+  }
+
+  /*card resize*/
+
+  #line-time > li:nth-child(odd) > div {
+    width: 170px;
+    height: 260px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 170px;
+    height: 260px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  .frame > img {
+    margin-right: -15px;
+    margin-left: auto;
+    width: 150px;
+    height: 160px;
+    border-radius: 50px 50px 50px 50px;
+  }
+
+  div.text-card {
+    width: 190px;
+  }
+
+  .point-time::after {
+    top: 124px;
+  }
+}
+
+/*DEVICE SPECIFIC DIMMENSIONS*/
+
+@media only screen and (width: 740px) and (height: 360px) {
+  /*fix for galaxy s8 wide screen*/
+
+  section.intro {
+    background-position: bottom right;
+  }
+}
+
+@media (width: 375px) {
+  /*fix for iphone SE regular screen*/
+
+  section.intro {
+    background-position: bottom right -180px;
+  }
+}
+
+@media only screen and (width: 667px) and (height: 375px) {
+  /*fix for iphone SE wide screen*/
+
+  section.intro {
+    background-position: bottom right;
+  }
 }
