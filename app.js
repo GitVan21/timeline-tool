@@ -9,6 +9,9 @@ const formData = document.querySelector("#form-data")
 const modal = document.querySelector("#form-modal");
 const coverInput = document.querySelector("#cover")
 
+//Variable global que usaremos para ordenar de mayor a menor o de menor a mayor
+let orderCards = true
+
 /**
  * Esta funcion servira como llamada a la api y retorna una promesa resuelta o rechazada
  * que se tratara con un async/await
@@ -38,8 +41,10 @@ const drawLine = async () => {
 
   if (info.length > 0) {
     info = JSON.parse(info);
+    info = shortByYear(info)
   } else {
     info = await collectData(url);
+    info = shortByYear(info)
     localStorage.setItem("info", JSON.stringify(info));
     console.log("Conectando a GitHub");
   }
@@ -136,6 +141,18 @@ const saveNewGame = (game) => {
   closeModal();
 
   line.lastChild.scrollIntoView()
+}
+
+/**
+ * Ordena segun la variable global orderCards
+ * 
+ * Ascendente / Descendente
+ * 
+ * @param {arr Objects} arr 
+ * @returns 
+ */
+const shortByYear = (arr) => {
+  return orderCards ? arr.sort((a,b) => a.date - b.date) : arr.sort((a,b) => b.date - a.date)
 }
 
 drawLine();
