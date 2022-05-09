@@ -113,6 +113,7 @@ window.addEventListener("scroll", () => {
 
 closeButton.addEventListener("click", () => {
   const modal = document.querySelector("#form-modal");
+  modal.classList.remove("form-modal");
   modal.classList.add("form-modal-close");
 });
 
@@ -126,4 +127,7 @@ submitButton.addEventListener("click", (e) => {
   e.preventDefault();
   const formData = document.querySelector("#form-data")
   console.log(formData.title.value)
+  console.log(formData.date.value)
+  console.log(formData.description.value)
+  console.log(formData.cover.value)
 })
