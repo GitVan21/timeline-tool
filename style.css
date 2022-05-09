@@ -1,4 +1,5 @@
-/*NORMALIZES*/ /*fonts*/
+/*NORMALIZES*/
+/*fonts*/
 
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 
@@ -84,6 +85,7 @@ div figure.logo {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  overflow: hidden;
   width: 80%;
   padding-top: 10px;
   margin: auto;
@@ -101,11 +103,9 @@ div figure.logo {
   min-height: 60%;
   max-height: max-content;
   border-radius: 20px;
-  background-image: linear-gradient(
-    to right,
-    rgb(55, 55, 55) 10%,
-    rgb(107, 0, 0) 90%
-  );
+  background-image: linear-gradient(to right,
+      rgb(55, 55, 55) 10%,
+      rgb(107, 0, 0) 90%);
   box-shadow: 0px 0px 40px white;
 }
 
@@ -122,11 +122,9 @@ div figure.logo {
   left: -5px;
   top: 180px;
   margin-left: -7px;
-  background-image: linear-gradient(
-    to right top,
-    rgb(55, 55, 55) 70%,
-    rgb(107, 106, 106) 20%
-  );
+  background-image: linear-gradient(to right top,
+      rgb(55, 55, 55) 70%,
+      rgb(107, 106, 106) 20%);
   padding: 10px;
   border: 5px solid rgb(21, 21, 21);
   border-radius: 100%;
@@ -187,14 +185,13 @@ h1 {
   width: 500px;
   margin-bottom: 4rem;
   /* background-color: rgb(30, 30, 30); */
-  background-image: linear-gradient(
-    to top,
-    rgb(25, 25, 25) 10%,
-    rgb(72, 72, 72) 90%
-  );
+  background-image: linear-gradient(to top,
+      rgb(25, 25, 25) 10%,
+      rgb(72, 72, 72) 90%);
   padding: 1rem auto;
   margin-left: auto;
   margin-right: auto;
+  transition-duration: 0.1s;
 }
 
 /* card size */
@@ -217,11 +214,11 @@ h1 {
 
 /*scrollbars*/
 
-#line-time > li:nth-child(odd) > div {
+#line-time>li:nth-child(odd)>div {
   direction: ltr;
 }
 
-#line-time > li:nth-child(even) > div {
+#line-time>li:nth-child(even)>div {
   direction: rtl;
 }
 
@@ -249,6 +246,7 @@ h1 {
   left: 50px;
   border-radius: 60px 2px 2px 20px;
   box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
+  transition-duration: 0.1s;
 }
 
 .dialog-right {
@@ -256,6 +254,7 @@ h1 {
   border-radius: 0px 80px 50px 0px;
   padding: 1.5rem;
   box-shadow: -1px 1px 1px 1px rgba(105, 155, 255, 0.158);
+  transition-duration: 0.1s;
 }
 
 .frame {
@@ -300,6 +299,14 @@ h1 {
   display: inline-block;
 }
 
+.visible-left{
+  animation: 0.5s toleft forwards;
+}
+
+.visible-right{
+  animation: 0.5s toright forwards;
+}
+
 .visible {
   opacity: 1;
 }
@@ -327,7 +334,7 @@ h1 {
   display: none;
 }
 
-.button-operation{
+.button-operation {
   width: 40px;
   height: 45px;
   border-radius: 100%;
@@ -337,15 +344,16 @@ h1 {
   cursor: pointer;
 }
 
-.order-button{
+.order-button {
   position: relative;
   top: -50px;
   border: 5px solid orange;
   color: orange;
   margin-left: 20px;
+  margin-top: 50px;
 }
 
-.order-button:hover{
+.order-button:hover {
   box-shadow: 0 0 20px orange;
   text-shadow: 0 0 20px orange;
 }
@@ -355,9 +363,10 @@ h1 {
   top: -50px;
   border: 5px solid greenyellow;
   color: greenyellow;
+  margin-top: 50px;
 }
 
-.open-button:hover{
+.open-button:hover {
   box-shadow: 0 0 20px greenyellow;
   text-shadow: 0 0 20px greenyellow;
 }
@@ -367,7 +376,7 @@ h1 {
   color: red;
 }
 
-.close-button:hover{
+.close-button:hover {
   box-shadow: 0 0 20px red;
   text-shadow: 0 0 20px red;
 }
@@ -504,7 +513,7 @@ textarea {
     box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
   }
 
-  #line-time > li:nth-child(odd) > div {
+  #line-time>li:nth-child(odd)>div {
     direction: rtl;
   }
 
@@ -577,7 +586,7 @@ textarea {
     position: relative;
   }
 
-  #line-time > li:nth-child(odd) > div {
+  #line-time>li:nth-child(odd)>div {
     width: 250px;
     height: 270px;
 
@@ -586,7 +595,7 @@ textarea {
     align-items: center;
   }
 
-  #line-time > li:nth-child(even) > div {
+  #line-time>li:nth-child(even)>div {
     width: 250px;
     height: 270px;
 
@@ -609,9 +618,10 @@ textarea {
     height: 80vh;
     font-size: 20px;
   }
+
   /*card resize*/
 
-  #line-time > li:nth-child(odd) > div {
+  #line-time>li:nth-child(odd)>div {
     width: 170px;
     height: 260px;
 
@@ -620,7 +630,7 @@ textarea {
     align-items: center;
   }
 
-  #line-time > li:nth-child(even) > div {
+  #line-time>li:nth-child(even)>div {
     width: 170px;
     height: 260px;
 
@@ -629,7 +639,7 @@ textarea {
     align-items: center;
   }
 
-  .frame > img {
+  .frame>img {
     margin-right: -15px;
     margin-left: auto;
     width: 150px;
@@ -646,7 +656,28 @@ textarea {
   }
 }
 
-/* DEVICE SPECIFIC DIMMENSIONS
+/* DEVICE SPECIFIC DIMMENSIONS */
+
+/* Animations */
+@keyframes toleft {
+
+  0%,
+  80% {
+    transform: translateX(1500px) scale(0.1);
+  }
+
+  100% {transform: translateX(0) scale(1);}
+}
+
+@keyframes toright {
+
+  0%,
+  80% {
+    transform: translateX(-1500px) scale(0.1);
+  }
+
+  100% {transform: translateX(0) scale(1);}
+}
 
 /*iphone SE fix*/
 
@@ -900,6 +931,7 @@ textarea {
     font-size: 50px;
   }
 }
+
 /*surface pro 7 fix*/
 
 @media only screen and (width: 912px) and (height: 1368px) {

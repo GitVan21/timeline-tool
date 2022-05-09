@@ -191,10 +191,21 @@ window.addEventListener("scroll", () => {
   //Iteramos: getBoundingClientRect().top sacara la altura a la que se encuentra la pantalla y screenSize recogera su altura total
   dialogs.map((e, i) => {
     if (e.getBoundingClientRect().top < screenSize) {
+      if(i%2 === 0){
+        e.classList.add("visible-left");
+      }else{
+        e.classList.add("visible-right");
+      }
       e.classList.add("visible");
       e.classList.remove("no-visible");
     } else {
-      e.classList.add("no-visible");
+      if(i%2 === 0){
+        e.classList.remove("visible-left");
+        e.classList.add("no-visible");
+      }else{
+        e.classList.remove("visible-right");
+        e.classList.add("no-visible");
+      }
       e.classList.remove("visible");
     }
   });
