@@ -90,12 +90,11 @@ div figure.logo {
 }
 
 #line-time {
-  position: absolute;
-  left: 50%;
   list-style: none;
   margin: auto;
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
   gap: 100px;
   padding: 50px 0;
   width: 5px;
