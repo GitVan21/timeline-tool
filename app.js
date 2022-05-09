@@ -3,10 +3,9 @@
 const url =
   "https://gist.githubusercontent.com/bertez/8e62741154903c35edb3bfb825a7f052/raw/b5cd5137fd168116cc71740f1fbb75819d0fa82e/zelda-timeline.json";
 const line = document.querySelector("#line-time");
-
 const closeButton = document.querySelector("#close-button");
-
 const openButton = document.querySelector("#open-button");
+const submitButton = document.querySelector("#submit")
 
 /**
  * Esta funcion servira como llamada a la api y retorna una promesa resuelta o rechazada
@@ -122,3 +121,9 @@ openButton.addEventListener("click", () => {
   modal.classList.remove("form-modal-close");
   modal.classList.add("form-modal");
 });
+
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const formData = document.querySelector("#form-data")
+  console.log(formData.title.value)
+})
