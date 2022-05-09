@@ -93,7 +93,11 @@ div figure.logo {
   min-height: 60%;
   max-height: max-content;
   border-radius: 20px;
-  background-color: rgb(18, 18, 18);
+  background-image: linear-gradient(
+    to right,
+    rgb(55, 55, 55) 10%,
+    rgb(107, 0, 0) 90%
+  );
   box-shadow: 0px 0px 40px white;
 }
 
@@ -110,9 +114,13 @@ div figure.logo {
   left: -5px;
   top: 180px;
   margin-left: -7px;
-  background-color: rgb(255, 255, 255);
+  background-image: linear-gradient(
+    to right top,
+    rgb(55, 55, 55) 70%,
+    rgb(107, 106, 106) 20%
+  );
   padding: 10px;
-  border: 5px solid rgb(18, 18, 18);
+  border: 5px solid rgb(21, 21, 21);
   border-radius: 100%;
 }
 
@@ -121,14 +129,18 @@ h1 {
   width: 100%;
   font-family: "triforce", serif;
   font-size: 40px;
+  text-shadow: 10px 0px 40px rgb(212, 44, 44);
+  text-decoration: overline 2px;
+  text-decoration-color: rgb(212, 44, 44);
+  text-decoration-thickness: 5px;
   background-color: transparent;
-  background-size: cover;
-  color: rgb(0, 0, 0);
-  text-shadow: 0px 0px 10px rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.661);
+
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
+
   margin-top: 1rem;
   margin-bottom: 19rem;
   padding: 0.5rem;
@@ -165,7 +177,11 @@ h1 {
   width: 500px;
   margin-bottom: 4rem;
   /* background-color: rgb(30, 30, 30); */
-  background-image: linear-gradient(to right top, rgb(30, 30, 30), red);
+  background-image: linear-gradient(
+    to top,
+    rgb(25, 25, 25) 10%,
+    rgb(72, 72, 72) 90%
+  );
   padding: 1rem auto;
   margin-left: auto;
   margin-right: auto;
@@ -1039,10 +1055,6 @@ textarea {
 
 /*WORK PENDING*/
 
-/* Fix mediaq
-finish zelda logo
-finish timeline design
-finish h1 design
-card background/size/shadow(?)
+/* 
 form button position design
 add footer */
