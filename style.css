@@ -60,6 +60,7 @@ div.container {
 
 section.title-container {
   height: 10vh;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -149,8 +150,8 @@ h1 {
   flex-wrap: wrap;
 
   margin-top: 1rem;
-  margin-bottom: 3rem;
-  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 .text-card {
@@ -312,6 +313,7 @@ h1 {
   background-image: url("https://fondosmil.com/fondo/4529.jpg");
   background-size: cover;
   position: fixed;
+  height: 95%;
   z-index: 10;
   top: 1.5%;
   left: 5%;
@@ -352,15 +354,15 @@ fieldset {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 5px;
   padding: 10px;
   border: none;
 }
 
 legend {
   font-family: "triforce", serif;
-  margin: 10px;
-  font-size: 40px;
+  margin: 5px;
+  font-size: 30px;
   color: red;
   text-shadow: 1px 2px 6px white;
   text-align: center;

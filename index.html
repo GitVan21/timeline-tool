@@ -12,7 +12,7 @@
   <body>
     <section class="form-modal-close" id="form-modal">
       <button class="close-button" id="close-button">X</button>
-      <form action="get">
+      <form action="POST" id="form-data">
         <fieldset>
           <legend>The Legend of Zelda Form</legend>
           <div class="form-group">
@@ -22,6 +22,7 @@
               name="title"
               type="text"
               placeholder="'Please, introduce game's title...'"
+              required
               autofocus
             />
           </div>
@@ -34,6 +35,7 @@
               type="number"
               min="1986"
               max="2050"
+              required
               placeholder="'Please, introduce the year of game launch...'"
             />
           </div>
@@ -45,6 +47,7 @@
               id="description"
               cols="30"
               rows="5"
+              required
               placeholder="'Please, type anything related to the game's history, achievements...'"
             ></textarea>
           </div>
@@ -56,12 +59,15 @@
               class="preview-cover"
               src="https://mega.tv/wp-content/uploads/sites/4/2014/07/batman-1.jpg"
               alt="user cover"
+              id="coverImage"
             />
 
             <input
               id="cover"
               name="cover"
-              type="text"
+              type="url"
+              required
+              pattern="https://.*"
               placeholder="'Please, give the URL in which the game's cover is stored...'"
             />
           </div>
