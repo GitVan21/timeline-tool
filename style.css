@@ -58,6 +58,12 @@ div.container {
   align-items: center;
 }
 
+section.title-container {
+  height: 10vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 /*header zelda logo*/
 
 div figure.logo {
@@ -127,6 +133,7 @@ div figure.logo {
 /*TEXTS*/
 h1 {
   width: 100%;
+
   font-family: "triforce", serif;
   font-size: 40px;
   text-shadow: 10px 0px 40px rgb(212, 44, 44);
@@ -140,9 +147,10 @@ h1 {
   flex-direction: column;
   align-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   margin-top: 1rem;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   padding: 0.5rem;
 }
 
@@ -423,8 +431,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 45px;
-    margin-top: 28rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -443,9 +449,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 45px;
-    margin-top: 28rem;
-    margin-bottom: 5rem;
+    font-size: 30px;
   }
 
   /*timeline resize*/
@@ -511,9 +515,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 5rem;
+    font-size: 28px;
   }
 
   /*timeline resize*/
@@ -584,9 +586,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 5rem;
+    font-size: 20px;
   }
   /*card resize*/
 
@@ -640,8 +640,7 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 20rem;
+    padding: 2rem;
   }
 }
 
@@ -660,8 +659,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 12rem;
-    margin-bottom: 12rem;
   }
 }
 
@@ -678,8 +675,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 28rem;
   }
 }
 
@@ -695,8 +690,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -714,8 +707,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 28rem;
   }
 }
 
@@ -731,8 +722,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -749,8 +738,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 28rem;
   }
 }
 
@@ -766,8 +753,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -784,8 +769,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 28rem;
   }
 }
 
@@ -801,8 +784,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -819,8 +800,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 28rem;
   }
 }
 
@@ -836,8 +815,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -854,8 +831,6 @@ textarea {
 
   h1 {
     font-size: 40px;
-    margin-top: 40rem;
-    margin-bottom: 40rem;
   }
 }
 
@@ -871,8 +846,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 50px;
-    margin-top: 40rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -889,8 +862,6 @@ textarea {
 
   h1 {
     font-size: 40px;
-    margin-top: 40rem;
-    margin-bottom: 34rem;
   }
 }
 
@@ -906,8 +877,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 50px;
-    margin-top: 40rem;
-    margin-bottom: 5rem;
   }
 }
 /*surface pro 7 fix*/
@@ -923,8 +892,6 @@ textarea {
 
   h1 {
     font-size: 60px;
-    margin-top: 50rem;
-    margin-bottom: 50rem;
   }
 }
 
@@ -944,8 +911,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 60px;
-    margin-top: 40rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -962,8 +927,6 @@ textarea {
 
   h1 {
     font-size: 40px;
-    margin-top: 40rem;
-    margin-bottom: 40rem;
   }
 }
 
@@ -979,8 +942,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 40px;
-    margin-top: 40rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -997,8 +958,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 28rem;
-    margin-bottom: 28rem;
   }
 }
 
@@ -1014,8 +973,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 5rem;
   }
 }
 
@@ -1032,8 +989,6 @@ textarea {
 
   h1 {
     font-size: 30px;
-    margin-top: 30rem;
-    margin-bottom: 30rem;
   }
 }
 
@@ -1049,8 +1004,6 @@ textarea {
   h1 {
     height: 80vh;
     font-size: 30px;
-    margin-top: 20rem;
-    margin-bottom: 5rem;
   }
 }
 
