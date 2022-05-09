@@ -561,11 +561,19 @@ textarea {
   #line-time > li:nth-child(odd) > div {
     width: 270px;
     height: 280px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   #line-time > li:nth-child(even) > div {
     width: 270px;
     height: 280px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   .point-time div {
@@ -636,11 +644,19 @@ textarea {
   #line-time > li:nth-child(odd) > div {
     width: 240px;
     height: 300px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   #line-time > li:nth-child(even) > div {
     width: 240px;
     height: 300px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   .point-time div {
@@ -700,11 +716,19 @@ textarea {
   #line-time > li:nth-child(odd) > div {
     width: 220px;
     height: 272px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   #line-time > li:nth-child(even) > div {
     width: 220px;
     height: 272px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   .dialog h3 {
@@ -750,11 +774,19 @@ textarea {
   #line-time > li:nth-child(odd) > div {
     width: 170px;
     height: 260px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   #line-time > li:nth-child(even) > div {
     width: 170px;
     height: 260px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   .frame > img {
