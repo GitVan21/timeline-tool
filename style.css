@@ -79,6 +79,25 @@ div figure.logo {
   max-width: 200px;
 }
 
+/*footer*/
+
+h6.footer-text {
+  font-family: "triforce", sans-serif;
+  width: 100%;
+  height: 30px;
+  font-size: 0.5;
+  text-align: center;
+  padding: 10px 0px 0px 0px;
+  border: 2px transparent;
+  border-radius: 5px 10px 5px 5px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px red;
+  color: rgb(41, 41, 41);
+  background-color: rgba(247, 247, 247, 0.993);
+  z-index: 10;
+}
+
 /*LINEA TEMPORAL*/
 #body-timeline {
   display: flex;
@@ -182,7 +201,7 @@ h1::before {
   display: inline-block;
   padding: 1rem;
   line-height: 25px;
-  margin-top: 80px;
+  margin-top: 20px;
 }
 
 .dialog-left p {
@@ -278,7 +297,7 @@ h1::before {
   width: 200px;
   height: 210px;
   border-radius: 80px 30px 80px 50px;
-  padding: 1.5rem;
+  padding: 1.2rem;
   filter: drop-shadow(2px 2px 15px rgb(235, 35, 35));
 }
 
@@ -286,14 +305,14 @@ h1::before {
   width: 200px;
   height: 210px;
   border-radius: 30px 80px 50px 80px;
-  padding: 1.5rem;
+  padding: 1.2rem;
   filter: drop-shadow(2px 2px 15px rgb(105, 155, 255));
 }
 
 .dialog h2 {
   text-align: center;
   font-family: "triforce", serif;
-  padding: 0.8rem;
+  padding: 0.6rem;
   text-shadow: 3px 5px 20px rgb(255, 255, 255);
   display: inline-block;
 }
@@ -310,6 +329,8 @@ h1::before {
   font-family: "triforce", serif;
   color: rgb(233, 233, 233);
   display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .visible {
@@ -339,7 +360,7 @@ h1::before {
   display: none;
 }
 
-.button-operation{
+.button-operation {
   width: 40px;
   height: 45px;
   border-radius: 100%;
@@ -349,7 +370,7 @@ h1::before {
   cursor: pointer;
 }
 
-.order-button{
+.order-button {
   position: relative;
   top: -50px;
   border: 5px solid orange;
@@ -357,7 +378,7 @@ h1::before {
   margin-left: 20px;
 }
 
-.order-button:hover{
+.order-button:hover {
   box-shadow: 0 0 20px orange;
   text-shadow: 0 0 20px orange;
 }
@@ -369,7 +390,7 @@ h1::before {
   color: greenyellow;
 }
 
-.open-button:hover{
+.open-button:hover {
   box-shadow: 0 0 20px greenyellow;
   text-shadow: 0 0 20px greenyellow;
 }
@@ -379,7 +400,7 @@ h1::before {
   color: red;
 }
 
-.close-button:hover{
+.close-button:hover {
   box-shadow: 0 0 20px red;
   text-shadow: 0 0 20px red;
 }
@@ -477,8 +498,8 @@ textarea {
     font-size: 45px;
   }
 
-  h1::before {
-    min-width: 260px;
+  .dialog h3 {
+    margin-top: 8px;
   }
 }
 
@@ -545,6 +566,10 @@ textarea {
   .open-button {
     margin-left: 3%;
     position: relative;
+  }
+
+  .dialog h3 {
+    margin-top: 8px;
   }
 }
 
@@ -624,16 +649,8 @@ textarea {
     align-items: center;
   }
 
-  .dialog p {
-    margin-top: 2px;
-  }
-
-  .dialog h2 {
-    padding: 0.5rem;
-  }
-
   .dialog h3 {
-    margin-top: 20px;
+    margin-top: 18px;
   }
 }
 
@@ -679,7 +696,7 @@ textarea {
     margin-left: auto;
     width: 150px;
     height: 160px;
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 50px 50px 50px 49px;
   }
 
   div.text-card {
@@ -691,11 +708,7 @@ textarea {
   }
 
   .dialog h3 {
-    margin-top: 5px;
-  }
-
-  .dialog h2 {
-    padding: 0.8rem;
+    margin-top: 8px;
   }
 }
 
