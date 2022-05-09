@@ -81,6 +81,9 @@ div figure.logo {
 
 /*LINEA TEMPORAL*/
 #body-timeline {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   width: 80%;
   padding-top: 10px;
   margin: auto;
@@ -325,28 +328,49 @@ h1 {
   display: none;
 }
 
-.open-button {
-  width: 20px;
-  height: 25px;
-  border: 2px solid rgba(142, 247, 132, 0.541);
+.button-operation{
+  width: 40px;
+  height: 45px;
   border-radius: 100%;
-  font-size: 20px;
-  font-weight: bolder;
-  color: rgb(177, 175, 175);
+  font-size: 30px;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.order-button{
+  position: relative;
+  top: -50px;
+  border: 5px solid orange;
+  color: orange;
+  margin-left: 20px;
+}
+
+.order-button:hover{
+  box-shadow: 0 0 20px orange;
+  text-shadow: 0 0 20px orange;
+}
+
+.open-button {
+  position: relative;
+  top: -50px;
+  border: 5px solid greenyellow;
+  color: greenyellow;
+}
+
+.open-button:hover{
+  box-shadow: 0 0 20px greenyellow;
+  text-shadow: 0 0 20px greenyellow;
 }
 
 .close-button {
-  width: 25px;
-  height: 25px;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 100%;
-  font-size: 20px;
-  font-weight: bolder;
+  border: 5px solid red;
   color: red;
-  outline: none;
-  background-color: transparent;
+}
+
+.close-button:hover{
+  box-shadow: 0 0 20px red;
+  text-shadow: 0 0 20px red;
 }
 
 fieldset {
@@ -550,8 +574,6 @@ textarea {
   }
 
   .open-button {
-    width: 20px;
-    height: 25px;
     margin-left: -5%;
     position: relative;
   }

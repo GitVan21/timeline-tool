@@ -9,6 +9,9 @@ const formData = document.querySelector("#form-data")
 const modal = document.querySelector("#form-modal");
 const coverInput = document.querySelector("#cover")
 
+//Variable global que usaremos para ordenar de mayor a menor o de menor a mayor
+let orderCards = true
+
 /**
  * Esta funcion servira como llamada a la api y retorna una promesa resuelta o rechazada
  * que se tratara con un async/await
@@ -33,13 +36,17 @@ const collectData = (direction) => {
  */
 const drawLine = async () => {
 
+  addButtonShort();
+
   //Primero obtenemos algo si es que lo hay y luego comprobamos su length, el || evitara que llege al if un info sin valor
   let info = localStorage.getItem("info") || [];
 
   if (info.length > 0) {
     info = JSON.parse(info);
+    info = shortByYear(info)
   } else {
     info = await collectData(url);
+    info = shortByYear(info)
     localStorage.setItem("info", JSON.stringify(info));
     console.log("Conectando a GitHub");
   }
@@ -138,6 +145,38 @@ const saveNewGame = (game) => {
   line.lastChild.scrollIntoView()
 }
 
+/**
+ * Ordena segun la variable global orderCards
+ * 
+ * Ascendente / Descendente
+ * 
+ * @param {arr Objects} arr 
+ * @returns 
+ */
+const shortByYear = (arr) => {
+  return orderCards ? arr.sort((a,b) => a.date - b.date) : arr.sort((a,b) => b.date - a.date)
+}
+
+const addButtonShort = () => {
+  const newButton = document.createElement('button')
+  const body = document.querySelector('#body-timeline')
+  newButton.classList.add('button-operation')
+  newButton.classList.add('order-button')
+  newButton.setAttribute('id', 'order-cards');
+  newButton.addEventListener('click', deleteLine)
+  orderCards ? newButton.innerHTML = '↓' : newButton.innerHTML = '↑'
+  body.appendChild(newButton)
+}
+
+const deleteLine = (e) => {
+  orderCards = !orderCards
+  while(line.childElementCount !== 0){
+    line.lastElementChild.remove();
+  }
+  drawLine();
+  e.target.remove();
+}
+
 drawLine();
 
 //Añadimos a la ventana un 'escuchador' para el evento scroll
@@ -197,3 +236,5 @@ formData.addEventListener("submit", (e) => {
   //Si lo encuentra avisara, si no procedera a hacer el push del objeto
   hasError ? alert('Intento de inyeccion Javascript') : saveNewGame(game)
 })
+
+
