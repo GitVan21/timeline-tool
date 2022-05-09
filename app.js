@@ -36,6 +36,8 @@ const collectData = (direction) => {
  */
 const drawLine = async () => {
 
+  addButtonShort();
+
   //Primero obtenemos algo si es que lo hay y luego comprobamos su length, el || evitara que llege al if un info sin valor
   let info = localStorage.getItem("info") || [];
 
@@ -155,6 +157,28 @@ const shortByYear = (arr) => {
   return orderCards ? arr.sort((a,b) => a.date - b.date) : arr.sort((a,b) => b.date - a.date)
 }
 
+const addButtonShort = () => {
+  const newButton = document.createElement('button')
+  const body = document.querySelector('#body-timeline')
+  newButton.classList.add('button-operation')
+  newButton.classList.add('order-button')
+  newButton.setAttribute('id', 'order-cards');
+
+   newButton.addEventListener('click', deleteLine)
+
+  orderCards ? newButton.innerHTML = '↓' : newButton.innerHTML = '↑'
+  body.appendChild(newButton)
+}
+
+const deleteLine = (e) => {
+  orderCards = !orderCards
+  while(line.childElementCount !== 0){
+    line.lastElementChild.remove();
+  }
+  drawLine();
+  e.target.remove();
+}
+
 drawLine();
 
 //Añadimos a la ventana un 'escuchador' para el evento scroll
@@ -214,3 +238,5 @@ formData.addEventListener("submit", (e) => {
   //Si lo encuentra avisara, si no procedera a hacer el push del objeto
   hasError ? alert('Intento de inyeccion Javascript') : saveNewGame(game)
 })
+
+
