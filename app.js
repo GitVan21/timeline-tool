@@ -7,6 +7,7 @@ const closeButton = document.querySelector("#close-button");
 const openButton = document.querySelector("#open-button");
 const formData = document.querySelector("#form-data")
 const modal = document.querySelector("#form-modal");
+const coverInput = document.querySelector("#cover")
 
 /**
  * Esta funcion servira como llamada a la api y retorna una promesa resuelta o rechazada
@@ -134,7 +135,7 @@ const saveNewGame = (game) => {
   //Y cerramos el modal
   closeModal();
 
-  window.scroll(lis)
+  line.lastChild.scrollIntoView()
 }
 
 drawLine();
@@ -163,6 +164,11 @@ window.addEventListener("scroll", () => {
 //Ambos eventos de control para botones
 closeButton.addEventListener("click", closeModal);
 openButton.addEventListener("click", openModal);
+
+coverInput.addEventListener("change", (e) => {
+  const coverImage = document.querySelector('#coverImage')
+  coverImage.src = e.target.value
+})
 
 //Se captura el submit para aprovechar la validacion por el lado del HTML
 formData.addEventListener("submit", (e) => {
