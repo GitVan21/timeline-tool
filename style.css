@@ -27,6 +27,8 @@ main {
   padding: 0 0.5rem;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -83,7 +85,7 @@ div figure.logo {
 
 h6.footer-text {
   font-family: "triforce", sans-serif;
-  width: 100%;
+  width: 80%;
   height: 30px;
   font-size: 0.5;
   text-align: center;
@@ -103,6 +105,7 @@ h6.footer-text {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+
   width: 80%;
   padding-top: 10px;
   margin: auto;
@@ -217,7 +220,6 @@ h1::before {
 .body-card {
   width: 500px;
   margin-bottom: 4rem;
-  /* background-color: rgb(30, 30, 30); */
   background-image: linear-gradient(
     to top,
     rgb(25, 25, 25) 10%,
@@ -363,7 +365,7 @@ h1::before {
 .button-operation {
   width: 40px;
   height: 45px;
-  border-radius: 100%;
+  border-radius: 1000px;
   font-size: 30px;
   outline: none;
   background-color: transparent;
@@ -375,7 +377,6 @@ h1::before {
   top: -50px;
   border: 5px solid orange;
   color: orange;
-  margin-left: 20px;
 }
 
 .order-button:hover {
@@ -388,6 +389,7 @@ h1::before {
   top: -50px;
   border: 5px solid greenyellow;
   color: greenyellow;
+  margin-right: 3%;
 }
 
 .open-button:hover {
@@ -495,7 +497,7 @@ textarea {
 
   h1 {
     height: 25vh;
-    font-size: 45px;
+    font-size: 30px;
   }
 
   .dialog h3 {
@@ -543,20 +545,27 @@ textarea {
     width: 1px;
   }
 
-  /*So we always use same card format and display for mw 755px*/
+  /*So we always use same card format and display for mw 820px*/
 
   .dialog-left {
-    border-radius: 0px 80px 50px 0px;
+    left: 30px;
+    border-radius: 60px 2px 2px 20px;
     box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
   }
 
-  #line-time > li:nth-child(odd) > div {
-    direction: rtl;
+  .dialog-right {
+    right: 300px;
+    border-radius: 0px 80px 50px 0px;
   }
 
-  .dialog-right {
-    right: 0px;
-    left: 50px;
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 280px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 280px;
   }
 
   .point-time div {
@@ -564,18 +573,17 @@ textarea {
   }
 
   .open-button {
-    margin-left: 3%;
-    position: relative;
+    margin-right: 3%;
   }
 
   .dialog h3 {
-    margin-top: 8px;
+    margin-top: 30px;
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 678px) {
   section.intro {
-    background-position: bottom right -180px;
+    background-position: bottom right -120px;
   }
 
   div figure.logo {
@@ -583,22 +591,85 @@ textarea {
   }
 
   .logo-img {
-    max-width: 200px;
+    max-width: 250px;
   }
 
   h1 {
     height: 80vh;
-    font-size: 28px;
-  }
-
-  h1::before {
-    min-width: 165px;
+    font-size: 30px;
   }
 
   /*timeline resize*/
 
   #line-time {
-    left: 10%;
+    width: 4px;
+    background-color: rgb(18, 18, 18);
+    box-shadow: 0px 0px 15px white;
+  }
+
+  .point-time::after {
+    right: 0px;
+    left: -2px;
+    top: 184px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 7px;
+    border: 4px solid rgb(18, 18, 18);
+  }
+
+  .point-time {
+    width: 1px;
+  }
+
+  /*So we always use same card format and display for mw 820px*/
+
+  .dialog-left {
+    left: 30px;
+    border-radius: 60px 2px 2px 20px;
+    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
+  }
+
+  .dialog-right {
+    right: 265px;
+    border-radius: 0px 80px 50px 0px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 240px;
+    height: 300px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 240px;
+    height: 300px;
+  }
+
+  .point-time div {
+    font-size: 15px;
+  }
+
+  .open-button {
+    margin-right: 3%;
+  }
+
+  .dialog h2 {
+    font-size: 18px;
+  }
+
+  .dialog h3 {
+    margin-top: 1px;
+  }
+}
+
+@media (max-width: 530px) {
+  section.intro {
+    background-position: bottom right -180px;
+  }
+
+  /*timeline resize*/
+
+  #line-time {
+    position: relative;
+    left: -90px;
     width: 2px;
     background-color: rgb(18, 18, 18);
     box-shadow: 0px 0px 10px white;
@@ -626,31 +697,34 @@ textarea {
     font-size: 12px;
   }
 
-  .open-button {
-    margin-left: -5%;
-    position: relative;
-  }
-
   #line-time > li:nth-child(odd) > div {
-    width: 250px;
-    height: 270px;
-
-    display: flex;
-    align-content: center;
-    align-items: center;
+    width: 220px;
+    height: 272px;
   }
 
   #line-time > li:nth-child(even) > div {
-    width: 250px;
-    height: 270px;
-
-    display: flex;
-    align-content: center;
-    align-items: center;
+    width: 220px;
+    height: 272px;
   }
 
   .dialog h3 {
     margin-top: 18px;
+  }
+
+  .dialog-right {
+    border-radius: 60px 2px 2px 20px;
+  }
+
+  .dialog-right img {
+    border-radius: 80px 30px 80px 50px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    direction: ltr;
+  }
+
+  .order-button {
+    margin-left: 3%;
   }
 }
 
@@ -676,19 +750,11 @@ textarea {
   #line-time > li:nth-child(odd) > div {
     width: 170px;
     height: 260px;
-
-    display: flex;
-    align-content: center;
-    align-items: center;
   }
 
   #line-time > li:nth-child(even) > div {
     width: 170px;
     height: 260px;
-
-    display: flex;
-    align-content: center;
-    align-items: center;
   }
 
   .frame > img {
@@ -717,6 +783,21 @@ textarea {
 /*iphone SE fix*/
 
 @media only screen and (width: 375px) and (height: 667px) {
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
+  }
+
   section.intro {
     background-position: bottom right -180px;
   }
@@ -726,7 +807,7 @@ textarea {
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 20px;
     padding: 2rem;
   }
 }
@@ -754,6 +835,21 @@ textarea {
 @media only screen and (width: 414px) and (height: 896px) {
   section.intro {
     background-position: bottom right -220px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
   }
 
   .logo-img {
@@ -788,6 +884,21 @@ textarea {
     background-position: bottom right -220px;
   }
 
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
@@ -817,6 +928,21 @@ textarea {
 @media only screen and (width: 393px) and (height: 851px) {
   section.intro {
     background-position: bottom right -180px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
   }
 
   .logo-img {
@@ -850,6 +976,21 @@ textarea {
     background-position: bottom right -180px;
   }
 
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
@@ -879,6 +1020,21 @@ textarea {
 @media only screen and (width: 412px) and (height: 915px) {
   section.intro {
     background-position: bottom right -180px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
   }
 
   .logo-img {
@@ -917,7 +1073,22 @@ textarea {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 280px;
+    height: 340px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 280px;
+    height: 340px;
+  }
+
+  .dialog h3 {
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -932,7 +1103,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 
@@ -948,7 +1119,7 @@ textarea {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -963,7 +1134,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 /*surface pro 7 fix*/
@@ -978,7 +1149,7 @@ textarea {
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 30px;
   }
 }
 
@@ -997,7 +1168,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 60px;
+    font-size: 30px;
   }
 }
 
@@ -1008,12 +1179,26 @@ textarea {
     background-position: bottom right -180px;
   }
 
+  #line-time > li:nth-child(odd) > div {
+    width: 220px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 220px;
+    height: 320px;
+  }
+
+  .dialog-right {
+    right: 245px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -1022,13 +1207,27 @@ textarea {
     margin-top: 10%;
   }
 
+  #line-time > li:nth-child(odd) > div {
+    width: 300px;
+    height: 340px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 300px;
+    height: 340px;
+  }
+
+  .dialog-right {
+    right: 325px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
 
   h1 {
     height: 80vh;
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -1039,16 +1238,66 @@ textarea {
     background-position: bottom right -180px;
   }
 
+  #line-time {
+    position: relative;
+    left: -170px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 180px;
+    height: 280px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 180px;
+    height: 280px;
+  }
+
   .logo-img {
     max-width: 170px;
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 20px;
+  }
+
+  .text-card h3 {
+    margin-top: 20px;
+  }
+
+  .point-time::after {
+    top: 130px;
+  }
+
+  #body-timeline {
+    margin-left: 100px;
+  }
+
+  .open-button {
+    right: 20%;
+  }
+
+  .order-button {
+    right: 45%;
   }
 }
 
 @media only screen and (width: 653px) and (height: 280px) {
+  section.intro {
+    background-position: center;
+  }
+  .point-time::after {
+    top: 60px;
+  }
+
+  .dialog-left {
+    left: 20px;
+  }
+
+  .dialog-right {
+    right: 270px;
+  }
+
   div figure.logo {
     margin-top: 10%;
   }
@@ -1061,6 +1310,16 @@ textarea {
     height: 80vh;
     font-size: 30px;
   }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 250px;
+    height: 220px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 250px;
+    height: 220px;
+  }
 }
 
 /*galaxy a51-a71 fix*/
@@ -1068,6 +1327,21 @@ textarea {
 @media only screen and (width: 412px) and (height: 914px) {
   section.intro {
     background-position: bottom right -189px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -170px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 300px;
+    height: 330px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 300px;
+    height: 330px;
   }
 
   .logo-img {
@@ -1093,9 +1367,3 @@ textarea {
     font-size: 30px;
   }
 }
-
-/*WORK PENDING*/
-
-/* 
-form button position design
-add footer */
