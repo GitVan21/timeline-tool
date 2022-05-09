@@ -163,9 +163,7 @@ const addButtonShort = () => {
   newButton.classList.add('button-operation')
   newButton.classList.add('order-button')
   newButton.setAttribute('id', 'order-cards');
-
-   newButton.addEventListener('click', deleteLine)
-
+  newButton.addEventListener('click', deleteLine)
   orderCards ? newButton.innerHTML = '↓' : newButton.innerHTML = '↑'
   body.appendChild(newButton)
 }
