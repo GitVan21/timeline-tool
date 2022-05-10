@@ -28,6 +28,8 @@ main {
   padding: 0 0.5rem;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -80,12 +82,30 @@ div figure.logo {
   max-width: 200px;
 }
 
+/*footer*/
+
+h6.footer-text {
+  font-family: "triforce", sans-serif;
+  width: 80%;
+  height: 30px;
+  font-size: 0.5;
+  text-align: center;
+  padding: 10px 0px 0px 0px;
+  border: 2px transparent;
+  border-radius: 5px 10px 5px 5px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px red;
+  color: rgb(41, 41, 41);
+  background-color: rgba(247, 247, 247, 0.993);
+  z-index: 10;
+}
+
 /*LINEA TEMPORAL*/
 #body-timeline {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  overflow: hidden;
   width: 80%;
   padding-top: 10px;
   margin: auto;
@@ -136,12 +156,10 @@ h1 {
 
   font-family: "triforce", serif;
   font-size: 40px;
-  text-shadow: 10px 0px 40px rgb(212, 44, 44);
-  text-decoration: overline 2px;
-  text-decoration-color: rgb(212, 44, 44);
-  text-decoration-thickness: 5px;
+  text-shadow: 2px 2px 4px rgb(105, 155, 255), 10px 0px 40px rgb(255, 255, 255);
+
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.661);
+  color: rgba(255, 255, 255, 0.884);
 
   display: flex;
   flex-direction: column;
@@ -152,6 +170,19 @@ h1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
+}
+
+h1::before {
+  content: "";
+
+  height: 3px;
+  border-radius: 3px;
+
+  min-width: 175px;
+
+  background-color: rgba(255, 255, 255, 0.884);
+  box-shadow: 2px 2px 5px rgb(219, 80, 80);
+  margin-bottom: 4px;
 }
 
 .text-card {
@@ -169,6 +200,7 @@ h1 {
   display: inline-block;
   padding: 1rem;
   line-height: 25px;
+  margin-top: 20px;
 }
 
 .dialog-left p {
@@ -184,10 +216,11 @@ h1 {
 .body-card {
   width: 500px;
   margin-bottom: 4rem;
-  /* background-color: rgb(30, 30, 30); */
-  background-image: linear-gradient(to top,
-      rgb(25, 25, 25) 10%,
-      rgb(72, 72, 72) 90%);
+  background-image: linear-gradient(
+    to top,
+    rgb(25, 25, 25) 10%,
+    rgb(72, 72, 72) 90%
+  );
   padding: 1rem auto;
   margin-left: auto;
   margin-right: auto;
@@ -265,7 +298,7 @@ h1 {
   width: 200px;
   height: 210px;
   border-radius: 80px 30px 80px 50px;
-  padding: 1.5rem;
+  padding: 1.2rem;
   filter: drop-shadow(2px 2px 15px rgb(235, 35, 35));
 }
 
@@ -273,14 +306,14 @@ h1 {
   width: 200px;
   height: 210px;
   border-radius: 30px 80px 50px 80px;
-  padding: 1.5rem;
+  padding: 1.2rem;
   filter: drop-shadow(2px 2px 15px rgb(105, 155, 255));
 }
 
 .dialog h2 {
   text-align: center;
   font-family: "triforce", serif;
-  padding: 0.8rem;
+  padding: 0.6rem;
   text-shadow: 3px 5px 20px rgb(255, 255, 255);
   display: inline-block;
 }
@@ -297,6 +330,8 @@ h1 {
   font-family: "triforce", serif;
   color: rgb(233, 233, 233);
   display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .visible-left{
@@ -337,7 +372,7 @@ h1 {
 .button-operation {
   width: 40px;
   height: 45px;
-  border-radius: 100%;
+  border-radius: 1000px;
   font-size: 30px;
   outline: none;
   background-color: transparent;
@@ -349,8 +384,6 @@ h1 {
   top: -50px;
   border: 5px solid orange;
   color: orange;
-  margin-left: 20px;
-  margin-top: 50px;
 }
 
 .order-button:hover {
@@ -363,7 +396,7 @@ h1 {
   top: -50px;
   border: 5px solid greenyellow;
   color: greenyellow;
-  margin-top: 50px;
+  margin-right: 3%;
 }
 
 .open-button:hover {
@@ -449,6 +482,15 @@ textarea {
   padding-top: 5px;
 }
 
+/*FOOTER*/
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 /* mediaq */
 
 @media (min-width: 821px) {
@@ -461,8 +503,12 @@ textarea {
   }
 
   h1 {
-    height: 80vh;
-    font-size: 45px;
+    height: 25vh;
+    font-size: 30px;
+  }
+
+  .dialog h3 {
+    margin-top: 8px;
   }
 }
 
@@ -506,20 +552,35 @@ textarea {
     width: 1px;
   }
 
-  /*So we always use same card format and display for mw 755px*/
+  /*So we always use same card format and display for mw 820px*/
 
   .dialog-left {
-    border-radius: 0px 80px 50px 0px;
+    left: 30px;
+    border-radius: 60px 2px 2px 20px;
     box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
   }
 
-  #line-time>li:nth-child(odd)>div {
-    direction: rtl;
+  .dialog-right {
+    right: 300px;
+    border-radius: 0px 80px 50px 0px;
   }
 
-  .dialog-right {
-    right: 0px;
-    left: 50px;
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 280px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 280px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 
   .point-time div {
@@ -527,14 +588,17 @@ textarea {
   }
 
   .open-button {
-    margin-left: 3%;
-    position: relative;
+    margin-right: 3%;
+  }
+
+  .dialog h3 {
+    margin-top: 30px;
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 678px) {
   section.intro {
-    background-position: bottom right -180px;
+    background-position: bottom right -120px;
   }
 
   div figure.logo {
@@ -542,18 +606,93 @@ textarea {
   }
 
   .logo-img {
-    max-width: 200px;
+    max-width: 250px;
   }
 
   h1 {
     height: 80vh;
-    font-size: 28px;
+    font-size: 30px;
   }
 
   /*timeline resize*/
 
   #line-time {
-    left: 10%;
+    width: 4px;
+    background-color: rgb(18, 18, 18);
+    box-shadow: 0px 0px 15px white;
+  }
+
+  .point-time::after {
+    right: 0px;
+    left: -2px;
+    top: 184px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 7px;
+    border: 4px solid rgb(18, 18, 18);
+  }
+
+  .point-time {
+    width: 1px;
+  }
+
+  /*So we always use same card format and display for mw 820px*/
+
+  .dialog-left {
+    left: 30px;
+    border-radius: 60px 2px 2px 20px;
+    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
+  }
+
+  .dialog-right {
+    right: 265px;
+    border-radius: 0px 80px 50px 0px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 240px;
+    height: 300px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 240px;
+    height: 300px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  .point-time div {
+    font-size: 15px;
+  }
+
+  .open-button {
+    margin-right: 3%;
+  }
+
+  .dialog h2 {
+    font-size: 18px;
+  }
+
+  .dialog h3 {
+    margin-top: 1px;
+  }
+}
+
+@media (max-width: 530px) {
+  section.intro {
+    background-position: bottom right -180px;
+  }
+
+  /*timeline resize*/
+
+  #line-time {
+    position: relative;
+    left: -90px;
     width: 2px;
     background-color: rgb(18, 18, 18);
     box-shadow: 0px 0px 10px white;
@@ -581,27 +720,42 @@ textarea {
     font-size: 12px;
   }
 
-  .open-button {
-    margin-left: -5%;
-    position: relative;
-  }
-
-  #line-time>li:nth-child(odd)>div {
-    width: 250px;
-    height: 270px;
+  #line-time > li:nth-child(odd) > div {
+    width: 220px;
+    height: 272px;
 
     display: flex;
     align-content: center;
     align-items: center;
   }
 
-  #line-time>li:nth-child(even)>div {
-    width: 250px;
-    height: 270px;
+  #line-time > li:nth-child(even) > div {
+    width: 220px;
+    height: 272px;
 
     display: flex;
     align-content: center;
     align-items: center;
+  }
+
+  .dialog h3 {
+    margin-top: 18px;
+  }
+
+  .dialog-right {
+    border-radius: 60px 2px 2px 20px;
+  }
+
+  .dialog-right img {
+    border-radius: 80px 30px 80px 50px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    direction: ltr;
+  }
+
+  .order-button {
+    margin-left: 3%;
   }
 }
 
@@ -619,6 +773,9 @@ textarea {
     font-size: 20px;
   }
 
+  h1::before {
+    min-width: 120px;
+  }
   /*card resize*/
 
   #line-time>li:nth-child(odd)>div {
@@ -644,7 +801,7 @@ textarea {
     margin-left: auto;
     width: 150px;
     height: 160px;
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 50px 50px 50px 49px;
   }
 
   div.text-card {
@@ -653,6 +810,10 @@ textarea {
 
   .point-time::after {
     top: 124px;
+  }
+
+  .dialog h3 {
+    margin-top: 8px;
   }
 }
 
@@ -682,6 +843,21 @@ textarea {
 /*iphone SE fix*/
 
 @media only screen and (width: 375px) and (height: 667px) {
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
+  }
+
   section.intro {
     background-position: bottom right -180px;
   }
@@ -691,7 +867,7 @@ textarea {
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 20px;
     padding: 2rem;
   }
 }
@@ -719,6 +895,21 @@ textarea {
 @media only screen and (width: 414px) and (height: 896px) {
   section.intro {
     background-position: bottom right -220px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
   }
 
   .logo-img {
@@ -753,6 +944,21 @@ textarea {
     background-position: bottom right -220px;
   }
 
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
@@ -782,6 +988,21 @@ textarea {
 @media only screen and (width: 393px) and (height: 851px) {
   section.intro {
     background-position: bottom right -180px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
   }
 
   .logo-img {
@@ -815,6 +1036,21 @@ textarea {
     background-position: bottom right -180px;
   }
 
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
@@ -844,6 +1080,21 @@ textarea {
 @media only screen and (width: 412px) and (height: 915px) {
   section.intro {
     background-position: bottom right -180px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -120px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 270px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 270px;
+    height: 320px;
   }
 
   .logo-img {
@@ -882,7 +1133,22 @@ textarea {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 280px;
+    height: 340px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 280px;
+    height: 340px;
+  }
+
+  .dialog h3 {
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -897,7 +1163,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 
@@ -913,7 +1179,7 @@ textarea {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -928,7 +1194,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 
@@ -944,7 +1210,7 @@ textarea {
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 30px;
   }
 }
 
@@ -963,7 +1229,7 @@ textarea {
 
   h1 {
     height: 80vh;
-    font-size: 60px;
+    font-size: 30px;
   }
 }
 
@@ -974,12 +1240,26 @@ textarea {
     background-position: bottom right -180px;
   }
 
+  #line-time > li:nth-child(odd) > div {
+    width: 220px;
+    height: 320px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 220px;
+    height: 320px;
+  }
+
+  .dialog-right {
+    right: 245px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -988,13 +1268,27 @@ textarea {
     margin-top: 10%;
   }
 
+  #line-time > li:nth-child(odd) > div {
+    width: 300px;
+    height: 340px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 300px;
+    height: 340px;
+  }
+
+  .dialog-right {
+    right: 325px;
+  }
+
   .logo-img {
     max-width: 200px;
   }
 
   h1 {
     height: 80vh;
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -1005,16 +1299,66 @@ textarea {
     background-position: bottom right -180px;
   }
 
+  #line-time {
+    position: relative;
+    left: -170px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 180px;
+    height: 280px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 180px;
+    height: 280px;
+  }
+
   .logo-img {
     max-width: 170px;
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 20px;
+  }
+
+  .text-card h3 {
+    margin-top: 20px;
+  }
+
+  .point-time::after {
+    top: 130px;
+  }
+
+  #body-timeline {
+    margin-left: 100px;
+  }
+
+  .open-button {
+    right: 20%;
+  }
+
+  .order-button {
+    right: 45%;
   }
 }
 
 @media only screen and (width: 653px) and (height: 280px) {
+  section.intro {
+    background-position: center;
+  }
+  .point-time::after {
+    top: 60px;
+  }
+
+  .dialog-left {
+    left: 20px;
+  }
+
+  .dialog-right {
+    right: 270px;
+  }
+
   div figure.logo {
     margin-top: 10%;
   }
@@ -1027,6 +1371,16 @@ textarea {
     height: 80vh;
     font-size: 30px;
   }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 250px;
+    height: 220px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 250px;
+    height: 220px;
+  }
 }
 
 /*galaxy a51-a71 fix*/
@@ -1034,6 +1388,21 @@ textarea {
 @media only screen and (width: 412px) and (height: 914px) {
   section.intro {
     background-position: bottom right -189px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -170px;
+  }
+
+  #line-time > li:nth-child(odd) > div {
+    width: 300px;
+    height: 330px;
+  }
+
+  #line-time > li:nth-child(even) > div {
+    width: 300px;
+    height: 330px;
   }
 
   .logo-img {
@@ -1059,9 +1428,3 @@ textarea {
     font-size: 30px;
   }
 }
-
-/*WORK PENDING*/
-
-/* 
-form button position design
-add footer */
