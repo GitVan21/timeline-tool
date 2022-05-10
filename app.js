@@ -52,27 +52,15 @@ const drawLine = async () => {
 
   //Iteramos la cadena resultante siendo E cada elemento e I su indice
   info.map((e, i) => {
-    /*      //Creamos los elementos
-        const point = document.createElement('li')
-        const dialog = document.createElement('div')
-
-        //Si es par le daremos una clase y si es impar otra
-        i%2 === 0 ? dialog.classList.add('dialog-left') : dialog.classList.add('dialog-right')
-        dialog.innerText = e.text
-        point.classList.add('point-time')
-        dialog.classList.add('dialog')
-
-        //Añadimos el estilo de point al li antes de enlazarlo como hijo de de la line
-        point.appendChild(dialog)
-        line.appendChild(point) */
     createLiAndCard(e, i);
   });
 };
 
-const addInfo = () => {
-  let info = JSON.parse(localStorage.getItem("info"));
-};
-
+/**
+ * Crea elemento en la linea temporal con un objeto y un indice para saber si va a la derecha o a la izquierda
+ * @param {*} element 
+ * @param {*} index 
+ */
 const createLiAndCard = (element, index) => {
   const li = document.createElement("li");
   li.classList.add("point-time");
@@ -127,6 +115,10 @@ const validate = (game) => {
   return err;
 };
 
+/**
+ * Creara un nuevo elemento en la linea temporal y lo agregara al final de esta
+ * @param {*} game 
+ */
 const saveNewGame = (game) => {
   //Recogemos todos los lis para obtener el length que pedimos para crear y enganchar la etiqueta
   const lis = document.getElementsByTagName("li");
@@ -206,6 +198,7 @@ window.addEventListener("scroll", () => {
 closeButton.addEventListener("click", closeModal);
 openButton.addEventListener("click", openModal);
 
+//Ayudara al user a previsualizar la imagen de su nuevo zelda
 coverInput.addEventListener("change", (e) => {
   const coverImage = document.querySelector("#coverImage");
   coverImage.src = e.target.value;
