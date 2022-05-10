@@ -86,18 +86,23 @@ div figure.logo {
 
 h6.footer-text {
   font-family: "triforce", sans-serif;
-  width: 80%;
-  height: 30px;
-  font-size: 0.5;
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
   text-align: center;
-  padding: 10px 0px 0px 0px;
+  overflow: none;
+  padding: 15px;
   border: 2px transparent;
   border-radius: 5px 10px 5px 5px;
   margin-top: 100px;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 10px red;
-  color: rgb(41, 41, 41);
-  background-color: rgba(247, 247, 247, 0.993);
+
+  color: rgb(158, 158, 158);
+  background-image: linear-gradient(
+    to top right,
+    rgb(25, 25, 25) 10%,
+    rgb(72, 72, 72) 90%
+  );
   z-index: 10;
 }
 
@@ -109,6 +114,7 @@ h6.footer-text {
   width: 80%;
   padding-top: 10px;
   margin: auto;
+  overflow: hidden;
 }
 
 #line-time {
@@ -123,10 +129,12 @@ h6.footer-text {
   min-height: 60%;
   max-height: max-content;
   border-radius: 20px;
-  background-image: linear-gradient(to right,
-      rgb(55, 55, 55) 10%,
-      rgb(107, 0, 0) 90%);
-  box-shadow: 0px 0px 40px white;
+  background-image: linear-gradient(
+    to right,
+    rgb(55, 55, 55) 10%,
+    rgb(107, 0, 0) 90%
+  );
+  box-shadow: 0px 0px 30px white;
 }
 
 .point-time {
@@ -139,14 +147,16 @@ h6.footer-text {
   content: "";
   position: absolute;
   right: 0px;
-  left: -5px;
-  top: 180px;
+  left: -3px;
+  top: 178px;
   margin-left: -7px;
-  background-image: linear-gradient(to right top,
-      rgb(55, 55, 55) 70%,
-      rgb(107, 106, 106) 20%);
+  background-image: linear-gradient(
+    to right top,
+    rgb(0, 0, 0),
+    rgb(107, 106, 106)
+  );
   padding: 10px;
-  border: 5px solid rgb(21, 21, 21);
+  border: 3px solid rgb(107, 0, 0);
   border-radius: 100%;
 }
 
@@ -273,21 +283,32 @@ h1::before {
   border-radius: 0px 2px 2px 0px;
 }
 
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(187, 1, 1);
+  box-shadow: 0px 0px 5px inset rgb(255, 255, 255);
+  height: 150px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(18, 18, 18);
+}
 /*card style by position*/
 
 .dialog-left {
   left: 50px;
   border-radius: 60px 2px 2px 20px;
-  box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
-  transition-duration: 0.1s;
+  box-shadow: 6px 7px 8px rgba(230, 64, 64, 0.582);
 }
 
 .dialog-right {
   right: 350px;
   border-radius: 0px 80px 50px 0px;
   padding: 1.5rem;
-  box-shadow: -1px 1px 1px 1px rgba(105, 155, 255, 0.158);
-  transition-duration: 0.1s;
+  box-shadow: -5px 7px 4px rgba(105, 155, 255, 0.493);
 }
 
 .frame {
@@ -314,7 +335,7 @@ h1::before {
   text-align: center;
   font-family: "triforce", serif;
   padding: 0.6rem;
-  text-shadow: 3px 5px 20px rgb(255, 255, 255);
+  text-shadow: 0px 0px 15px rgb(255, 255, 255);
   display: inline-block;
 }
 
@@ -353,14 +374,13 @@ h1::before {
 /* FORM MODAL */
 
 .form-modal {
-  width: 90%;
+  width: 100%;
   background-image: url("https://fondosmil.com/fondo/4529.jpg");
   background-size: cover;
   position: fixed;
-  height: 95%;
+  height: 100%;
   z-index: 10;
-  top: 1.5%;
-  left: 5%;
+  top: 0%;
   border-radius: 7px;
   padding: 10px;
 }
@@ -380,6 +400,8 @@ h1::before {
 }
 
 .order-button {
+  width: 30px;
+  height: 50px;
   position: relative;
   top: -50px;
   border: 5px solid orange;
@@ -476,19 +498,21 @@ textarea {
   height: 30px;
   border-radius: 5px;
   font-size: 15px;
+  background-image: linear-gradient(
+    to top,
+    rgb(0, 104, 0) 20%,
+    rgb(0, 172, 0) 60%
+  );
+  color: white;
+  cursor: pointer;
+}
+
+#submit:hover {
+  box-shadow: 0px 0px 20px rgb(148, 255, 148);
 }
 
 textarea {
   padding-top: 5px;
-}
-
-/*FOOTER*/
-
-.footer-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 /* mediaq */
@@ -541,11 +565,11 @@ textarea {
 
   .point-time::after {
     right: 0px;
-    left: -2px;
-    top: 184px;
+    left: -1px;
+    top: 180px;
     /* background-color: rgb(255, 255, 255); */
     padding: 7px;
-    border: 4px solid rgb(18, 18, 18);
+    border: 3px solid rgb(107, 0, 0);
   }
 
   .point-time {
@@ -557,7 +581,6 @@ textarea {
   .dialog-left {
     left: 30px;
     border-radius: 60px 2px 2px 20px;
-    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
   }
 
   .dialog-right {
@@ -619,16 +642,16 @@ textarea {
   #line-time {
     width: 4px;
     background-color: rgb(18, 18, 18);
-    box-shadow: 0px 0px 15px white;
+    box-shadow: 0px 0px 10px white;
   }
 
   .point-time::after {
     right: 0px;
-    left: -2px;
-    top: 184px;
+    left: 0px;
+    top: 180px;
     /* background-color: rgb(255, 255, 255); */
     padding: 7px;
-    border: 4px solid rgb(18, 18, 18);
+    border: 2px solid rgb(107, 0, 0);
   }
 
   .point-time {
@@ -640,7 +663,6 @@ textarea {
   .dialog-left {
     left: 30px;
     border-radius: 60px 2px 2px 20px;
-    box-shadow: 2px 2px 5px -3px rgb(235, 35, 35);
   }
 
   .dialog-right {
@@ -683,7 +705,7 @@ textarea {
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 576px) {
   section.intro {
     background-position: bottom right -180px;
   }
@@ -692,7 +714,7 @@ textarea {
 
   #line-time {
     position: relative;
-    left: -90px;
+    left: -130px;
     width: 2px;
     background-color: rgb(18, 18, 18);
     box-shadow: 0px 0px 10px white;
@@ -702,7 +724,7 @@ textarea {
     position: absolute;
     right: 0px;
     left: 1px;
-    top: 184px;
+    top: 100px;
     margin-left: -7px;
     background-color: rgb(255, 255, 255);
     padding: 5px;
@@ -721,7 +743,7 @@ textarea {
   }
 
   #line-time > li:nth-child(odd) > div {
-    width: 220px;
+    width: 240px;
     height: 272px;
 
     display: flex;
@@ -730,7 +752,7 @@ textarea {
   }
 
   #line-time > li:nth-child(even) > div {
-    width: 220px;
+    width: 240px;
     height: 272px;
 
     display: flex;
@@ -744,6 +766,7 @@ textarea {
 
   .dialog-right {
     border-radius: 60px 2px 2px 20px;
+    box-shadow: 6px 7px 8px rgba(105, 155, 255, 0.493);
   }
 
   .dialog-right img {
@@ -754,12 +777,19 @@ textarea {
     direction: ltr;
   }
 
+  #close-button {
+    width: 35px;
+    height: 40px;
+    font-size: 20px;
+    border: 3px solid red;
+  }
+
   .order-button {
     margin-left: 3%;
   }
 }
 
-@media (max-width: 280px) {
+@media (max-width: 304px) {
   div figure.logo {
     margin-top: 10%;
   }
@@ -776,6 +806,7 @@ textarea {
   h1::before {
     min-width: 120px;
   }
+
   /*card resize*/
 
   #line-time>li:nth-child(odd)>div {
@@ -814,6 +845,11 @@ textarea {
 
   .dialog h3 {
     margin-top: 8px;
+  }
+
+  #line-time {
+    position: relative;
+    left: -100px;
   }
 }
 
@@ -1331,7 +1367,8 @@ textarea {
   }
 
   #body-timeline {
-    margin-left: 100px;
+    margin-left: 120px;
+    width: 50%;
   }
 
   .open-button {
