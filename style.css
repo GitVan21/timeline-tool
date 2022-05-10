@@ -113,6 +113,7 @@ h6.footer-text {
   justify-content: space-between;
   width: 80%;
   padding-top: 80px;
+  padding-bottom: 20px;
   margin: auto;
   overflow: hidden;
 }
@@ -257,11 +258,11 @@ h1::before {
 
 /*scrollbars*/
 
-#line-time>li:nth-child(odd)>div {
+#line-time > li:nth-child(odd) > div {
   direction: ltr;
 }
 
-#line-time>li:nth-child(even)>div {
+#line-time > li:nth-child(even) > div {
   direction: rtl;
 }
 
@@ -355,11 +356,11 @@ body::-webkit-scrollbar-track {
   margin-bottom: 15px;
 }
 
-.visible-left{
+.visible-left {
   animation: 0.5s toleft forwards;
 }
 
-.visible-right{
+.visible-right {
   animation: 0.5s toright forwards;
 }
 
@@ -809,7 +810,7 @@ textarea {
 
   /*card resize*/
 
-  #line-time>li:nth-child(odd)>div {
+  #line-time > li:nth-child(odd) > div {
     width: 170px;
     height: 260px;
 
@@ -818,7 +819,7 @@ textarea {
     align-items: center;
   }
 
-  #line-time>li:nth-child(even)>div {
+  #line-time > li:nth-child(even) > div {
     width: 170px;
     height: 260px;
 
@@ -827,7 +828,7 @@ textarea {
     align-items: center;
   }
 
-  .frame>img {
+  .frame > img {
     margin-right: -15px;
     margin-left: auto;
     width: 150px;
@@ -857,23 +858,25 @@ textarea {
 
 /* Animations */
 @keyframes toleft {
-
   0%,
   80% {
     transform: translateX(1500px) scale(0.1);
   }
 
-  100% {transform: translateX(0) scale(1);}
+  100% {
+    transform: translateX(0) scale(1);
+  }
 }
 
 @keyframes toright {
-
   0%,
   80% {
     transform: translateX(-1500px) scale(0.1);
   }
 
-  100% {transform: translateX(0) scale(1);}
+  100% {
+    transform: translateX(0) scale(1);
+  }
 }
 
 /*iphone SE fix*/
