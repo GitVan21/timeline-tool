@@ -1,4 +1,5 @@
-/*NORMALIZES*/ /*fonts*/
+/*NORMALIZES*/
+/*fonts*/
 
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 
@@ -110,10 +111,10 @@ h6.footer-text {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-
   width: 80%;
   padding-top: 10px;
   margin: auto;
+  overflow: hidden;
 }
 
 #line-time {
@@ -233,6 +234,7 @@ h1::before {
   padding: 1rem auto;
   margin-left: auto;
   margin-right: auto;
+  transition-duration: 0.1s;
 }
 
 /* card size */
@@ -255,11 +257,11 @@ h1::before {
 
 /*scrollbars*/
 
-#line-time > li:nth-child(odd) > div {
+#line-time>li:nth-child(odd)>div {
   direction: ltr;
 }
 
-#line-time > li:nth-child(even) > div {
+#line-time>li:nth-child(even)>div {
   direction: rtl;
 }
 
@@ -351,6 +353,14 @@ body::-webkit-scrollbar-track {
   display: inline-block;
   margin-top: 20px;
   margin-bottom: 15px;
+}
+
+.visible-left{
+  animation: 0.5s toleft forwards;
+}
+
+.visible-right{
+  animation: 0.5s toright forwards;
 }
 
 .visible {
@@ -799,7 +809,7 @@ textarea {
 
   /*card resize*/
 
-  #line-time > li:nth-child(odd) > div {
+  #line-time>li:nth-child(odd)>div {
     width: 170px;
     height: 260px;
 
@@ -808,7 +818,7 @@ textarea {
     align-items: center;
   }
 
-  #line-time > li:nth-child(even) > div {
+  #line-time>li:nth-child(even)>div {
     width: 170px;
     height: 260px;
 
@@ -817,7 +827,7 @@ textarea {
     align-items: center;
   }
 
-  .frame > img {
+  .frame>img {
     margin-right: -15px;
     margin-left: auto;
     width: 150px;
@@ -843,7 +853,28 @@ textarea {
   }
 }
 
-/* DEVICE SPECIFIC DIMMENSIONS
+/* DEVICE SPECIFIC DIMMENSIONS */
+
+/* Animations */
+@keyframes toleft {
+
+  0%,
+  80% {
+    transform: translateX(1500px) scale(0.1);
+  }
+
+  100% {transform: translateX(0) scale(1);}
+}
+
+@keyframes toright {
+
+  0%,
+  80% {
+    transform: translateX(-1500px) scale(0.1);
+  }
+
+  100% {transform: translateX(0) scale(1);}
+}
 
 /*iphone SE fix*/
 
@@ -1202,6 +1233,7 @@ textarea {
     font-size: 30px;
   }
 }
+
 /*surface pro 7 fix*/
 
 @media only screen and (width: 912px) and (height: 1368px) {
